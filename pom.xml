@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>spring-data-mongodb</groupId>
+	<artifactId>spring-data-mongodb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- Shared version number properties -->
+	<properties>
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+		<spring.data.mongo.version>1.0.0.M3</spring.data.mongo.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.6.5</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring.data.mongo.version}</version>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id> spring-milestone </id>
+			<name> Spring Maven MILESTONE Repository </name>
+			<url> http://maven.springframework.org/milestone </url>
+		</repository>
+	</repositories>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>java</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<mainClass>edu.seua.mongo.MongoApp</mainClass>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+</project>
